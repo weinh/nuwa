@@ -11,6 +11,8 @@
     <modules>
         <module>parent</module>
         <module>base</module>
+        <module>system</module>
+        <module>management</module>
     </modules>
 
 </project>
