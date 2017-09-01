@@ -1,7 +1,9 @@
 package com.yongle.nuwa.demo.controller;
 
 import com.yongle.nuwa.demo.service.DemoService;
+import com.yongle.nuwa.model.demo.Demo;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -19,7 +21,9 @@ public class DemoController {
     DemoService demoService;
 
     @RequestMapping("/demo")
-    public String demo() {
-        return "";
+    @ResponseBody
+    public Demo demo() {
+        Demo demo = demoService.getDemo();
+        return demo;
     }
 }

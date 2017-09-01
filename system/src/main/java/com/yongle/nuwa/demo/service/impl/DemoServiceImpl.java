@@ -1,7 +1,12 @@
 package com.yongle.nuwa.demo.service.impl;
 
+import com.yongle.nuwa.demo.mapper.DemoMapper;
 import com.yongle.nuwa.demo.service.DemoService;
+import com.yongle.nuwa.model.demo.Demo;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import javax.sql.DataSource;
 
 /**
  * 类 名 称：DemoServiceImpl.java
@@ -11,4 +16,15 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class DemoServiceImpl implements DemoService {
+
+    @Resource
+    DemoMapper demoMapper;
+
+    @Resource(name = "fooDataSource")
+    DataSource dataSource;
+
+    @Override
+    public Demo getDemo() {
+        return demoMapper.selectByPrimaryKey(0L);
+    }
 }

@@ -1,4 +1,4 @@
-package com.yongle.model.demo;
+package com.yongle.nuwa.model.demo;
 
 import java.io.Serializable;
 

@@ -1,6 +1,6 @@
 package com.yongle.nuwa.demo.mapper;
 
-import com.yongle.model.demo.Demo;
+import com.yongle.nuwa.model.demo.Demo;
 
 public interface DemoMapper {
     /**

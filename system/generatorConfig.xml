@@ -4,27 +4,26 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-    <!--<classPathEntry location="/Program Files/IBM/SQLLIB/java/db2java.zip"/>-->
     <context id="DB2Tables" targetRuntime="MyBatis3">
         <!--model生成的时候自动可序列化-->
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
-        <!--去除注释  -->
+        <!--去除时间注释-->
         <commentGenerator>
             <property name="suppressDate" value="true"/>
         </commentGenerator>
         <!--可以将mapper接口增加@Mapper注解，可是1.3.5版本还没有这个功能，暂时不用了-->
         <!--<plugin type="org.mybatis.generator.plugins.MapperAnnotationPlugin"/>-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://192.168.227.129:3306/driftBottle?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false"
-                        userId="root"
-                        password="123456">
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/hscrmuat?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false"
+                        userId="hscrm"
+                        password="hscrm@123">
         </jdbcConnection>
 
         <javaTypeResolver>
             <property name="forceBigDecimals" value="true"/>
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.yongle.model.demo" targetProject="../base/src/main/java">
+        <javaModelGenerator targetPackage="com.yongle.nuwa.model.user" targetProject="../base/src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -33,7 +32,7 @@
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
-        <javaClientGenerator targetPackage="com.yongle.nuwa.demo.mapper" targetProject="src/main/java"
+        <javaClientGenerator targetPackage="com.yongle.nuwa.user.mapper" targetProject="src/main/java"
                              type="XMLMAPPER">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
