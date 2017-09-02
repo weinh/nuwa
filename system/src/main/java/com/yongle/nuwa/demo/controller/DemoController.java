@@ -18,7 +18,7 @@ import javax.annotation.Resource;
 public class DemoController {
 
     @Resource
-    DemoService demoService;
+    private DemoService demoService;
 
     @RequestMapping("/demo")
     @ResponseBody

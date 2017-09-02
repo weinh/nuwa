@@ -5,19 +5,15 @@
     <artifactId>system</artifactId>
     <parent>
         <groupId>com.yongle.nuwa</groupId>
-        <artifactId>parent</artifactId>
+        <artifactId>nuwa</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../parent/pom.xml</relativePath>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <dependencies>
         <dependency>
             <groupId>com.yongle.nuwa</groupId>
             <artifactId>base</artifactId>
             <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
 

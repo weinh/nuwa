@@ -8,9 +8,9 @@
 
     <parent>
         <groupId>com.yongle.nuwa</groupId>
-        <artifactId>parent</artifactId>
+        <artifactId>nuwa</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../parent/pom.xml</relativePath>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <dependencies>
@@ -18,6 +18,11 @@
             <groupId>com.yongle.nuwa</groupId>
             <artifactId>system</artifactId>
             <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
     </dependencies>
 
