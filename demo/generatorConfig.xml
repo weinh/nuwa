@@ -23,26 +23,26 @@
             <property name="forceBigDecimals" value="true"/>
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.yongle.nuwa.model.system" targetProject="../base/src/main/java">
+        <javaModelGenerator targetPackage="com.yongle.nuwa.model.demo" targetProject="../base/src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="com.yongle.nuwa.system.mapper" targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="com.yongle.nuwa.demo.mapper" targetProject="src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
-        <javaClientGenerator targetPackage="com.yongle.nuwa.system.mapper" targetProject="src/main/java"
+        <javaClientGenerator targetPackage="com.yongle.nuwa.demo.mapper" targetProject="src/main/java"
                              type="XMLMAPPER">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-        <table schema="" tableName="sys_user" domainObjectName=""
+        <table schema="" tableName="demo" domainObjectName=""
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
             <!--<property name="useActualColumnNames" value="true"/>-->
-            <!--<generatedKey column="ID" sqlStatement="DB2" identity="true"/>-->
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
             <!--<columnOverride column="DATE_FIELD" property="startDate"/>-->
             <!--<ignoreColumn column="FRED"/>-->
             <!--<columnOverride column="LONG_VARCHAR_FIELD" jdbcType="VARCHAR"/>-->

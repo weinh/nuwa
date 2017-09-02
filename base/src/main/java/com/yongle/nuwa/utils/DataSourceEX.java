@@ -14,7 +14,7 @@ import javax.sql.DataSource;
  * 开发人员：weinh
  * 开发时间：2017年09月01日
  */
-@Configuration
+//@Configuration
 public class DataSourceEX {
     @Bean
     @Primary

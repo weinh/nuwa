@@ -9,7 +9,6 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -27,5 +26,4 @@
             <scope>runtime</scope>
         </dependency>
     </dependencies>
-
 </project>

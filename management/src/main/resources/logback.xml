@@ -1,14 +1,6 @@
-<configuration debug="true" scan="true">
-    <property name="FILE_NAME" value="nuwa" />
-    <property name="LOG_FORMAT" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5p %c{1}[%M:%L] - %m%n" />
-
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-        <!-- encoders are  by default assigned the type
-             ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
-        <encoder>
-            <pattern>${LOG_FORMAT}</pattern>
-        </encoder>
-    </appender>
+<configuration debug="true" scan="true" packagingData="true">
+    <property name="FILE_NAME" value="nuwa"/>
+    <property name="LOG_FORMAT" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5p %c{1}[%M:%L] - %m%n"/>
     <appender name="ALL_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${FILE_NAME}.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
@@ -42,10 +34,9 @@
             <pattern>${LOG_FORMAT}</pattern>
         </encoder>
     </appender>
-    <logger name="org.springframework" level="WARN"/>
-    <logger name="org.apache" level="WARN"/>
-    <root level="debug">
-        <appender-ref ref="STDOUT"/>
+    <logger name="org.springframework" level="ERROR"/>
+    <logger name="org.apache" level="ERROR"/>
+    <root level="info">
         <appender-ref ref="ALL_LOG"/>
         <appender-ref ref="ERROR_LOG"/>
     </root>

@@ -1,7 +1,7 @@
 package com.yongle.nuwa.utils;
 
+import com.alibaba.fastjson.support.spring.GenericFastJsonRedisSerializer;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -20,6 +20,6 @@ public class RedisUtils {
 
     @PostConstruct
     private void init() {
-        stringRedisTemplate.setHashValueSerializer(new GenericJackson2JsonRedisSerializer());
+        stringRedisTemplate.setHashValueSerializer(new GenericFastJsonRedisSerializer());
     }
 }

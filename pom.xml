@@ -3,7 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.yongle.nuwa</groupId>
     <artifactId>nuwa</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -12,6 +11,7 @@
         <module>base</module>
         <module>system</module>
         <module>management</module>
+        <module>demo</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -19,28 +19,42 @@
         <version>1.5.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.38</version>
+        </dependency>
     </dependencies>
-
-
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>2.4</version>
+                    <configuration>
+                        <excludes>
+                            <exclude>logback-test.xml</exclude>
+                        </excludes>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
@@ -61,5 +75,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

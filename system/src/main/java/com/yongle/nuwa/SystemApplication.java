@@ -1,0 +1,17 @@
+package com.yongle.nuwa;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+/**
+ * 类 名 称：SystemApplication.java
+ * 功能说明：
+ * 开发人员：weinh
+ * 开发时间：2017年09月02日
+ */
+@SpringBootApplication
+public class SystemApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(SystemApplication.class, args);
+    }
+}
