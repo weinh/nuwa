@@ -8,4 +8,11 @@ package com.yongle.nuwa.demo.service;
  */
 public interface DemoService {
     void testTransaction(boolean isException);
+
+    /**
+     * 方法A调用方法B事务不生效的解决方案
+     */
+    void testA();
+
+    void testB();
 }

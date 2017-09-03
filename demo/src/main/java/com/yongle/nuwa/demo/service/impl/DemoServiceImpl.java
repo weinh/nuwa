@@ -5,7 +5,9 @@ import com.yongle.nuwa.demo.service.DemoService;
 import com.yongle.nuwa.model.demo.Demo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.aop.framework.AopContext;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
@@ -38,4 +40,26 @@ public class DemoServiceImpl implements DemoService {
         demo.setName("after");
         demoMapper.insert(demo);
     }
+
+    @Override
+    @Transactional
+    public void testA() {
+        Demo demo = new Demo();
+        demo.setName("A");
+        demoMapper.insert(demo);
+        DemoService demoService = (DemoService) AopContext.currentProxy();
+        demoService.testB();
+//        testB();
+
+        throw new Error("B出错了");
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void testB() {
+        Demo demo = new Demo();
+        demo.setName("B");
+        demoMapper.insert(demo);
+    }
+
 }

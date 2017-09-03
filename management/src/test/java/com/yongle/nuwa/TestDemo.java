@@ -21,4 +21,9 @@ public class TestDemo extends ManagementApplicationTests {
         demoService.testTransaction(true);
     }
 
+    @Test
+    public void testAB(){
+        demoService.testA();
+    }
+
 }
