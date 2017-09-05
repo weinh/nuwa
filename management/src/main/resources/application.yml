@@ -1,0 +1,13 @@
+# 家里数据库
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.227.129:3306/driftBottle?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 123456
+    #url:jdbc:mysql://127.0.0.1:3306/hscrmuat?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false
+    #username:hscrm
+    #password:hscrm@123
+    type: org.apache.tomcat.jdbc.pool.DataSource
+    tomcat:
+      initial-size: 10
