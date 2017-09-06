@@ -3,6 +3,7 @@ package com.yongle.nuwa.demo.service.impl;
 import com.yongle.nuwa.demo.mapper.DemoMapper;
 import com.yongle.nuwa.demo.service.DemoService;
 import com.yongle.nuwa.model.demo.Demo;
+import com.yongle.nuwa.vo.ResultBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.aop.framework.AopContext;
@@ -60,6 +61,11 @@ public class DemoServiceImpl implements DemoService {
         Demo demo = new Demo();
         demo.setName("B");
         demoMapper.insert(demo);
+    }
+
+    @Override
+    public ResultBean insert(Demo demo) {
+        return null;
     }
 
 }
