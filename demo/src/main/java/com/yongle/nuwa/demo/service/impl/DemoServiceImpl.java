@@ -1,7 +1,5 @@
 package com.yongle.nuwa.demo.service.impl;
 
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
 import com.yongle.nuwa.demo.mapper.DemoMapper;
 import com.yongle.nuwa.demo.service.DemoService;
 import com.yongle.nuwa.model.demo.Demo;
@@ -75,10 +73,11 @@ public class DemoServiceImpl extends BaseServiceImpl implements DemoService {
     @Override
     public ResultVO<Paging<Demo>> list() {
         DemoExample example = new DemoExample();
-        PageHelper.startPage(1, 10);
+//        PageHelper.startPage(1, 10);
         List<Demo> demos = demoMapper.selectByExample(example);
-        Paging<Demo> paging = new Paging<>(new PageInfo<>(demos));
+        Paging<Demo> paging = new Paging<>();
         ResultVO<Paging<Demo>> vo = new ResultVO<>();
+        paging.setList(demos);
         vo.setData(paging);
         return vo;
     }

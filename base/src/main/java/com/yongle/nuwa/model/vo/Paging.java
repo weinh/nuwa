@@ -1,7 +1,5 @@
 package com.yongle.nuwa.model.vo;
 
-import com.github.pagehelper.PageInfo;
-
 import java.util.List;
 
 /**
@@ -17,13 +15,13 @@ public class Paging<T> {
     private long total;
     private List<T> list;
 
-    public Paging(PageInfo<T> pageInfo) {
-        this.start = pageInfo.getPageNum();
-        this.limit = pageInfo.getPageSize();
-        this.total = pageInfo.getTotal();
-        this.pages = pageInfo.getPages();
-        this.list = pageInfo.getList();
-    }
+//    public Paging(PageInfo<T> pageInfo) {
+//        this.start = pageInfo.getPageNum();
+//        this.limit = pageInfo.getPageSize();
+//        this.total = pageInfo.getTotal();
+//        this.pages = pageInfo.getPages();
+//        this.list = pageInfo.getList();
+//    }
 
     public int getStart() {
         return start;

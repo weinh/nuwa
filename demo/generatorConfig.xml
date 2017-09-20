@@ -14,9 +14,9 @@
         <!--可以将mapper接口增加@Mapper注解，可是1.3.5版本还没有这个功能，暂时不用了-->
         <!--<plugin type="org.mybatis.generator.plugins.MapperAnnotationPlugin"/>-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://rm-bp1y4sxrvbln69yi9o.mysql.rds.aliyuncs.com/crm_test?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false"
-                        userId="hscrm"
-                        password="hscrm@123">
+                        connectionURL="jdbc:mysql://192.168.227.129:3306/driftBottle?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false"
+                        userId="root"
+                        password="123456">
         </jdbcConnection>
 
         <javaTypeResolver>

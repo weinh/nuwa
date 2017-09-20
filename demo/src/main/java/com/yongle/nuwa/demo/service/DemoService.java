@@ -1,12 +1,9 @@
 package com.yongle.nuwa.demo.service;
 
-import com.github.pagehelper.PageInfo;
 import com.yongle.nuwa.model.demo.Demo;
 import com.yongle.nuwa.model.vo.Paging;
 import com.yongle.nuwa.model.vo.ResultVO;
 import com.yongle.nuwa.service.BaseService;
-
-import java.util.List;
 
 /**
  * 类 名 称：DemoService.java

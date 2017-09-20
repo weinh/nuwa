@@ -29,7 +29,6 @@ public class DataSourceConfiguration {
     @ConfigurationProperties(prefix = "datasource.write")
     public DataSource writeDataSource() {
         logger.info("-------------------- writeDataSource init ---------------------");
-        DataSourceBuilder.create().build();
         return DataSourceBuilder.create().type(dataSourceType).build();
     }
 

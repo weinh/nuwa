@@ -1,8 +1,6 @@
 package com.yongle.nuwa.datasource;
 
-import com.yongle.nuwa.utils.SpringContextHolder;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.TransactionDefinition;
 
 import javax.annotation.PostConstruct;
@@ -47,6 +45,6 @@ public class DynamicDataSourceTransactionManager extends DataSourceTransactionMa
 
     @PostConstruct
     public void abc() {
-        setDataSource(SpringContextHolder.getBean(DynamicDataSource.class));
+//        setDataSource(SpringContextHolder.getBean(DynamicDataSource.class));
     }
 }
