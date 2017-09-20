@@ -1,17 +1,38 @@
 # 家里数据库
-spring:
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-#    url: jdbc:mysql://192.168.227.129:3306/driftBottle?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-#    username: root
-#    password: 123456
+#spring:
+#  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+##    url: jdbc:mysql://192.168.227.129:3306/driftBottle?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+##    username: root
+##    password: 123456
+#    url: jdbc:mysql://rm-bp1y4sxrvbln69yi9o.mysql.rds.aliyuncs.com/crm_test?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+#    username: hscrm
+#    password: hscrm@123
+#    driver-class-name: com.mysql.jdbc.Driver
+
+
+
+datasource:
+  readSize: 2
+  type: com.alibaba.druid.pool.DruidDataSource
+  write:
     url: jdbc:mysql://rm-bp1y4sxrvbln69yi9o.mysql.rds.aliyuncs.com/crm_test?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: hscrm
     password: hscrm@123
-    tomcat:
-      initial-size: 10
+    driver-class-name: com.mysql.jdbc.Driver
+  read1:
+    url: jdbc:mysql://rm-bp1y4sxrvbln69yi9o.mysql.rds.aliyuncs.com/crm_test?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: hscrm
+    password: hscrm@123
+    driver-class-name: com.mysql.jdbc.Driver
+  read2:
+    url: jdbc:mysql://rm-bp1y4sxrvbln69yi9o.mysql.rds.aliyuncs.com/crm_dev?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: hscrm
+    password: hscrm@123
+    driver-class-name: com.mysql.jdbc.Driver
 # 分页插件配置
 pagehelper:
   helper-dialect: mysql
   reasonable: true
-  support-methods-arguments: true
+mybatis:
+  config-location: classpath:mybatis-config.xml
