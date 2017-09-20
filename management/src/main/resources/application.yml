@@ -2,12 +2,15 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.227.129:3306/driftBottle?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-    username: root
-    password: 123456
-    #url:jdbc:mysql://127.0.0.1:3306/hscrmuat?useUnicode=true&amp;characterEncoding=UTF-8&amp;useSSL=false
-    #username:hscrm
-    #password:hscrm@123
-    type: org.apache.tomcat.jdbc.pool.DataSource
+#    url: jdbc:mysql://192.168.227.129:3306/driftBottle?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+#    username: root
+#    password: 123456
+    url: jdbc:mysql://rm-bp1y4sxrvbln69yi9o.mysql.rds.aliyuncs.com/crm_test?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: hscrm
+    password: hscrm@123
     tomcat:
       initial-size: 10
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true

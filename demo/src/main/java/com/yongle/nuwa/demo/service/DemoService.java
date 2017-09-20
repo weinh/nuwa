@@ -1,9 +1,12 @@
 package com.yongle.nuwa.demo.service;
 
+import com.github.pagehelper.PageInfo;
 import com.yongle.nuwa.model.demo.Demo;
-import com.yongle.nuwa.vo.ResultBean;
+import com.yongle.nuwa.model.vo.Paging;
+import com.yongle.nuwa.model.vo.ResultVO;
+import com.yongle.nuwa.service.BaseService;
 
-import javax.validation.constraints.NotNull;
+import java.util.List;
 
 /**
  * 类 名 称：DemoService.java
@@ -11,7 +14,7 @@ import javax.validation.constraints.NotNull;
  * 开发人员：weinh
  * 开发时间：2017年09月02日
  */
-public interface DemoService {
+public interface DemoService extends BaseService {
     void testTransaction(boolean isException);
 
     /**
@@ -21,5 +24,7 @@ public interface DemoService {
 
     void testB();
 
-    ResultBean insert(@NotNull Demo demo);
+    ResultVO insert(Demo demo);
+
+    ResultVO<Paging<Demo>> list();
 }

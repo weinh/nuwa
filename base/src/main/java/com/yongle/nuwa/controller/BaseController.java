@@ -1,8 +1,10 @@
 package com.yongle.nuwa.controller;
 
-import com.yongle.nuwa.vo.ResultBean;
+import com.yongle.nuwa.constant.ErrorEnum;
+import com.yongle.nuwa.model.vo.ResultVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -17,11 +19,16 @@ public class BaseController {
 
     @ExceptionHandler({Exception.class})
     @ResponseBody
-    public ResultBean exception(Exception e) {
+    public ResultVO exception(Exception e) {
         logger.error(e.getMessage(), e);
-        ResultBean resultBean = new ResultBean();
-        resultBean.setErrorCode(-1);
-        resultBean.setErrorInfo(e.getMessage());
-        return resultBean;
+        ResultVO vo = new ResultVO(ErrorEnum.ERROR);
+        vo.setErrorInfo(e.getMessage());
+        return vo;
+    }
+
+    protected ResultVO validatorParam(BindingResult bindingResult) {
+        ResultVO vo = new ResultVO(ErrorEnum.ERROR_PARAM);
+        vo.setErrorInfo(bindingResult.getFieldError().getField() + bindingResult.getFieldError().getDefaultMessage());
+        return vo;
     }
 }
