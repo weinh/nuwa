@@ -1,5 +1,10 @@
 package com.yongle.nuwa.demo.service;
 
+import com.yongle.nuwa.model.demo.Demo;
+import com.yongle.nuwa.vo.ResultBean;
+
+import javax.validation.constraints.NotNull;
+
 /**
  * 类 名 称：DemoService.java
  * 功能说明：
@@ -15,4 +20,6 @@ public interface DemoService {
     void testA();
 
     void testB();
+
+    ResultBean insert(@NotNull Demo demo);
 }

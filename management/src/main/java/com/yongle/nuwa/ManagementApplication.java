@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.HttpMessageConverters;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @EnableAspectJAutoProxy(proxyTargetClass = true, exposeProxy = true)
@@ -19,7 +20,7 @@ public class ManagementApplication {
     }
 
     @Bean
-    public HttpMessageConverters fastJsonHttpMessageConverters() {
+    HttpMessageConverters fastJsonHttpMessageConverters() {
         FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
         FastJsonConfig fastJsonConfig = new FastJsonConfig();
         fastJsonConfig.setSerializerFeatures(SerializerFeature.PrettyFormat);
@@ -28,7 +29,7 @@ public class ManagementApplication {
     }
 
     @Bean
-    public MapperScannerConfigurer MapperScannerConfigurer() {
+    MapperScannerConfigurer getMapperScannerConfigurer() {
         MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
         mapperScannerConfigurer.setBasePackage("com.yongle.nuwa.*.mapper");
         return mapperScannerConfigurer;

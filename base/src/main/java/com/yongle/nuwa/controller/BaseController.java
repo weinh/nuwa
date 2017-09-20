@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * 开发时间：2017年09月02日
  */
 public class BaseController {
-    final Logger logger = LoggerFactory.getLogger(getClass());
+    protected final Logger logger = LoggerFactory.getLogger(getClass());
 
     @ExceptionHandler({Exception.class})
     @ResponseBody
