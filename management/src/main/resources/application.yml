@@ -10,6 +10,7 @@ spring:
     password: hscrm@123
     tomcat:
       initial-size: 10
+# 分页插件配置
 pagehelper:
   helper-dialect: mysql
   reasonable: true
