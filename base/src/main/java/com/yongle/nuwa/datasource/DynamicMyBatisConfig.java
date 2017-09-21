@@ -25,7 +25,6 @@ public class DynamicMyBatisConfig extends MybatisAutoConfiguration {
     @Resource
     private DynamicDataSource dynamicDataSource;
 
-
     public DynamicMyBatisConfig(MybatisProperties properties, ObjectProvider<Interceptor[]> interceptorsProvider, ResourceLoader resourceLoader, ObjectProvider<DatabaseIdProvider> databaseIdProvider, ObjectProvider<List<ConfigurationCustomizer>> configurationCustomizersProvider) {
         super(properties, interceptorsProvider, resourceLoader, databaseIdProvider, configurationCustomizersProvider);
     }

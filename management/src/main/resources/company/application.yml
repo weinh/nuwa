@@ -15,9 +15,5 @@ datasource:
     - url: jdbc:mysql://rm-bp1y4sxrvbln69yi9o.mysql.rds.aliyuncs.com/crm_dev?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: hscrm
       password: hscrm@123
-# 分页插件配置
-pagehelper:
-  helper-dialect: mysql
-  reasonable: true
 mybatis:
   config-location: classpath:mybatis-config.xml
