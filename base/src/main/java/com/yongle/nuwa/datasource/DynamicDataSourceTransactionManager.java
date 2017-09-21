@@ -1,9 +1,11 @@
 package com.yongle.nuwa.datasource;
 
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.TransactionDefinition;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
 
 /**
  * 类 名 称：DynamicDataSourceTransactionManager.java
@@ -11,8 +13,11 @@ import javax.annotation.PostConstruct;
  * 开发人员：weinh
  * 开发时间：2017年09月19日
  */
-//@Service
+@Service
 public class DynamicDataSourceTransactionManager extends DataSourceTransactionManager {
+
+    @Resource
+    DynamicDataSource dataSource;
 
     /**
      * 只读事务到读库，读写事务到写库
@@ -44,7 +49,7 @@ public class DynamicDataSourceTransactionManager extends DataSourceTransactionMa
     }
 
     @PostConstruct
-    public void abc() {
-//        setDataSource(SpringContextHolder.getBean(DynamicDataSource.class));
+    public void setDataSource() {
+        super.setDataSource(dataSource);
     }
 }

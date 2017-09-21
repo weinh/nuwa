@@ -38,11 +38,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>com.github.pagehelper</groupId>-->
-            <!--<artifactId>pagehelper-spring-boot-starter</artifactId>-->
-            <!--<version>1.2.2</version>-->
-        <!--</dependency>-->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper</artifactId>
@@ -64,6 +59,23 @@
             <version>1.2.38</version>
         </dependency>
     </dependencies>
+    <profiles>
+        <profile>
+            <id>home</id>
+            <properties>
+                <profiles.active>home</profiles.active><!--开发环境-->
+            </properties>
+        </profile>
+        <profile>
+            <id>company</id>
+            <properties>
+                <profiles.active>company</profiles.active><!--测试环境-->
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
     <build>
         <pluginManagement>
             <plugins>
@@ -98,5 +110,17 @@
                 </dependencies>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources/${profiles.active}</directory>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>home/*</exclude>
+                    <exclude>company/*</exclude>
+                </excludes>
+            </resource>
+        </resources>
     </build>
 </project>
