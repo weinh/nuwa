@@ -15,18 +15,18 @@ import javax.sql.DataSource;
 import java.util.List;
 
 /**
- * 类 名 称：MyBatisConfig.java
+ * 类 名 称：DynamicMyBatisConfig.java
  * 功能说明：
  * 开发人员：weinh
  * 开发时间：2017年09月20日
  */
 @Configuration
-public class MyBatisConfig extends MybatisAutoConfiguration {
+public class DynamicMyBatisConfig extends MybatisAutoConfiguration {
     @Resource
-    DynamicDataSource dynamicDataSource;
+    private DynamicDataSource dynamicDataSource;
 
 
-    public MyBatisConfig(MybatisProperties properties, ObjectProvider<Interceptor[]> interceptorsProvider, ResourceLoader resourceLoader, ObjectProvider<DatabaseIdProvider> databaseIdProvider, ObjectProvider<List<ConfigurationCustomizer>> configurationCustomizersProvider) {
+    public DynamicMyBatisConfig(MybatisProperties properties, ObjectProvider<Interceptor[]> interceptorsProvider, ResourceLoader resourceLoader, ObjectProvider<DatabaseIdProvider> databaseIdProvider, ObjectProvider<List<ConfigurationCustomizer>> configurationCustomizersProvider) {
         super(properties, interceptorsProvider, resourceLoader, databaseIdProvider, configurationCustomizersProvider);
     }
 

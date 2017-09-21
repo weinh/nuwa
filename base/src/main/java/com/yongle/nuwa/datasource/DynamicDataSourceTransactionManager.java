@@ -1,6 +1,7 @@
 package com.yongle.nuwa.datasource;
 
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.TransactionDefinition;
 
@@ -13,7 +14,7 @@ import javax.annotation.Resource;
  * 开发人员：weinh
  * 开发时间：2017年09月19日
  */
-@Service
+@Component
 public class DynamicDataSourceTransactionManager extends DataSourceTransactionManager {
 
     @Resource
