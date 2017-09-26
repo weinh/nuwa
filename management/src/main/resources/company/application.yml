@@ -1,7 +1,8 @@
 spring:
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-datasource:
+  application:
+    name: management
+ds-helper:
+  driver-class-name: com.mysql.jdbc.Driver
   type: com.alibaba.druid.pool.DruidDataSource
   read-data-source-poll-pattern: 1
   write:
@@ -15,5 +16,7 @@ datasource:
     - url: jdbc:mysql://rm-bp1y4sxrvbln69yi9o.mysql.rds.aliyuncs.com/crm_dev?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: hscrm
       password: hscrm@123
-mybatis:
-  config-location: classpath:mybatis-config.xml
+pagehelper:
+  helper-dialect: mysql
+logging:
+  file: ${spring.application.name}

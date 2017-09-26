@@ -1,9 +1,8 @@
 spring:
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
   application:
     name: management
-datasource:
+ds-helper:
+  driver-class-name: com.mysql.jdbc.Driver
   type: com.alibaba.druid.pool.DruidDataSource
   read-data-source-poll-pattern: 1
   write:
@@ -17,7 +16,7 @@ datasource:
     - url: jdbc:mysql://192.168.227.130:3306/driftBottle?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
       password: 123456
-mybatis:
-  config-location: classpath:mybatis-config.xml
+pagehelper:
+  helper-dialect: mysql
 logging:
   file: ${spring.application.name}
