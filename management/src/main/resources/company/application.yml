@@ -2,20 +2,24 @@ spring:
   application:
     name: management
 ds-helper:
-  driver-class-name: com.mysql.jdbc.Driver
-  type: com.alibaba.druid.pool.DruidDataSource
   read-data-source-poll-pattern: 1
   write:
     url: jdbc:mysql://rm-bp1y4sxrvbln69yi9o.mysql.rds.aliyuncs.com/crm_test?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: hscrm
     password: hscrm@123
+    initial-size: 10
+    max-active: 50
   read:
     - url: jdbc:mysql://rm-bp1y4sxrvbln69yi9o.mysql.rds.aliyuncs.com/crm_dev?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: hscrm
       password: hscrm@123
+      initial-size: 10
+      max-active: 50
     - url: jdbc:mysql://rm-bp1y4sxrvbln69yi9o.mysql.rds.aliyuncs.com/crm_dev?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: hscrm
       password: hscrm@123
+      initial-size: 10
+      max-active: 50
 pagehelper:
   helper-dialect: mysql
 logging:

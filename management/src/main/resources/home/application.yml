@@ -2,20 +2,24 @@ spring:
   application:
     name: management
 ds-helper:
-  driver-class-name: com.mysql.jdbc.Driver
-  type: com.alibaba.druid.pool.DruidDataSource
   read-data-source-poll-pattern: 1
   write:
     url: jdbc:mysql://192.168.227.129:3306/driftBottle?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: root
     password: 123456
+    initial-size: 10
+    max-active: 50
   read:
     - url: jdbc:mysql://192.168.227.130:3306/driftBottle?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
       password: 123456
+      initial-size: 10
+      max-active: 50
     - url: jdbc:mysql://192.168.227.130:3306/driftBottle?useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
       password: 123456
+      initial-size: 10
+      max-active: 50
 pagehelper:
   helper-dialect: mysql
 logging:
