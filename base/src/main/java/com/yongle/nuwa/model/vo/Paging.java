@@ -5,10 +5,7 @@ import com.github.pagehelper.PageInfo;
 import java.util.List;
 
 /**
- * 类 名 称：Paging.java
- * 功能说明：
- * 开发人员：weinh
- * 开发时间：2017年09月20日
+ * @author weinh
  */
 public class Paging<T> {
     private int start;
@@ -16,6 +13,10 @@ public class Paging<T> {
     private int pages;
     private long total;
     private List<T> list;
+
+    public Paging() {
+
+    }
 
     public Paging(PageInfo<T> pageInfo) {
         this.start = pageInfo.getPageNum();

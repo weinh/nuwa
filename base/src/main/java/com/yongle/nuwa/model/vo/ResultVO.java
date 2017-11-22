@@ -3,20 +3,15 @@ package com.yongle.nuwa.model.vo;
 import com.yongle.nuwa.constant.ErrorEnum;
 
 /**
- * 类 名 称：ResultVO.java
- * 功能说明：
- * 开发人员：weinh
- * 开发时间：2017年09月02日
+ * @author weinh
  */
 public class ResultVO<T> {
     private Integer errorCode;
     private String errorInfo;
     private T data;
-    private Paging paging;
 
     public ResultVO() {
-        this.errorCode = ErrorEnum.SUCCESS.errorCode;
-        this.errorInfo = ErrorEnum.SUCCESS.errorInfo;
+        this(ErrorEnum.SUCCESS);
     }
 
     public ResultVO(ErrorEnum errorEnum) {
@@ -45,13 +40,5 @@ public class ResultVO<T> {
 
     public void setData(T data) {
         this.data = data;
-    }
-
-    public Paging getPaging() {
-        return paging;
-    }
-
-    public void setPaging(Paging paging) {
-        this.paging = paging;
     }
 }

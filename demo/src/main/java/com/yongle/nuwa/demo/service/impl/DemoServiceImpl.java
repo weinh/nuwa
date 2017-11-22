@@ -15,7 +15,6 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * 类 名 称：DemoServiceImpl.java
@@ -75,11 +74,10 @@ public class DemoServiceImpl extends BaseServiceImpl implements DemoService {
     @Override
     public ResultVO<Paging<Demo>> list() {
         DemoExample example = new DemoExample();
-        PageHelper.startPage(1, 10);
-        List<Demo> demos = demoMapper.selectByExample(example);
-        Paging<Demo> paging = new Paging<>(new PageInfo<>(demos));
+        PageInfo<Demo> pageInfo = PageHelper.startPage(1, 10)
+                .doSelectPageInfo(() -> demoMapper.selectByExample(example));
         ResultVO<Paging<Demo>> vo = new ResultVO<>();
-        vo.setData(paging);
+        vo.setData(new Paging<>(pageInfo));
         return vo;
     }
 

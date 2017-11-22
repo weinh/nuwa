@@ -5,6 +5,7 @@ import com.yongle.nuwa.model.vo.ResultVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -17,13 +18,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class BaseController {
     protected final Logger logger = LoggerFactory.getLogger(getClass());
 
-    @ExceptionHandler({Exception.class})
+    @ExceptionHandler
     @ResponseBody
     public ResultVO exception(Exception e) {
+        if (e instanceof MethodArgumentNotValidException) {
+            return validatorParam(((MethodArgumentNotValidException) e).getBindingResult());
+        }
         logger.error(e.getMessage(), e);
-        ResultVO vo = new ResultVO(ErrorEnum.ERROR);
-        vo.setErrorInfo(e.getMessage());
-        return vo;
+        return new ResultVO(ErrorEnum.ERROR);
     }
 
     protected ResultVO validatorParam(BindingResult bindingResult) {
